@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prjTupperControl", "prjTupperControl\prjTupperControl.csproj", "{A0750F5A-6F98-40EE-85D7-B40E1EAEA057}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0750F5A-6F98-40EE-85D7-B40E1EAEA057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0750F5A-6F98-40EE-85D7-B40E1EAEA057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0750F5A-6F98-40EE-85D7-B40E1EAEA057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0750F5A-6F98-40EE-85D7-B40E1EAEA057}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DA38814-1F30-4224-B090-82F07C3F807C}
+	EndGlobalSection
+EndGlobal
