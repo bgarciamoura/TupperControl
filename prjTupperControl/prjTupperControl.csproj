@@ -335,6 +335,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_Icon.ico" />
+    <None Include="Resources\group2_ByFreepik_EdittedByVycros.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

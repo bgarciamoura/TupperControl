@@ -174,30 +174,33 @@ namespace prjTupperControl
         public void TrocaImagens(int x)
         {
             btnPecas.Enabled = false;
+            btnConsorcio.Enabled = false;
             switch (x)
             {
                 case 1:
                     btnConsultoras.Image = Properties.Resources.girl_Consultora_64x64_By_Freepik;
                     btnClientes.Image = Properties.Resources.girl_Consultora_64x64_By_Freepik;
-                    btnConsorcio.Image = Properties.Resources.girl_Consultora_64x64_By_Freepik;
+                    //btnConsorcio.Image = Properties.Resources.girl_Consultora_64x64_By_Freepik;
                     break;
                 case 2:
                     btnConsultoras.Image = Properties.Resources.girl_Cliente_64x64_By_Freepik;
                     btnClientes.Image = Properties.Resources.girl_Cliente_64x64_By_Freepik;
-                    btnConsorcio.Image = Properties.Resources.girl_Cliente_64x64_By_Freepik;
+                    //btnConsorcio.Image = Properties.Resources.girl_Cliente_64x64_By_Freepik;
                     break;
                 case 3:
                     btnConsultoras.Image = Properties.Resources.girl_Consorcio_64x64_By_Freepik;
                     btnClientes.Image = Properties.Resources.girl_Consorcio_64x64_By_Freepik;
-                    btnConsorcio.Image = Properties.Resources.girl_Consorcio_64x64_By_Freepik;
+                    btnConsorcio.Image = Properties.Resources.group2_ByFreepik_EdittedByVycros;
+                    btnConsorcio.Enabled = true;
                     break;
                 case 4:
                     btnConsultoras.Image = Properties.Resources.bowl_64x64_By_Smashicons;
                     btnClientes.Image = Properties.Resources.bowl_64x64_By_Smashicons;
-                    btnConsorcio.Image = Properties.Resources.bowl_64x64_By_Smashicons;
+                    //btnConsorcio.Image = Properties.Resources.bowl_64x64_By_Smashicons;
                     break;
                 default:
                     btnPecas.Enabled = true;
+                    btnConsorcio.Enabled = true;
                     btnConsultoras.Image = Properties.Resources.girl_Consultora_64x64_By_Freepik;
                     btnClientes.Image = Properties.Resources.girl_Cliente_64x64_By_Freepik;
                     btnConsorcio.Image = Properties.Resources.girl_Consorcio_64x64_By_Freepik;
@@ -210,6 +213,13 @@ namespace prjTupperControl
         {
             switch (x)
             {
+                case 3:
+                    btnSair.Tag = "Cadastro";
+                    btnConsultoras.Text = "Cadastrar\n(F1)";
+                    btnClientes.Text = "Ver Dados\n(F2)";
+                    btnConsorcio.Text = "Grupos\n(F3)";
+                    btnSair.Text = "Voltar\n(F9)";
+                    break;
                 case 5:
                     btnSair.Tag = "Limpo";
                     btnConsultoras.Text = "Consultoras\n(F1)";
@@ -221,7 +231,7 @@ namespace prjTupperControl
                     btnSair.Tag = "Cadastro";
                     btnConsultoras.Text = "Cadastrar\n(F1)";
                     btnClientes.Text = "Ver Dados\n(F2)";
-                    btnConsorcio.Text = "Excluir\n(F3)";
+                    //btnConsorcio.Text = "Excluir\n(F3)";
                     btnSair.Text = "Voltar\n(F9)";
                     break;
             }
