@@ -159,15 +159,14 @@ namespace prjTupperControl
         {
             if (btnSair.Tag.Equals("Cadastro"))
             {
-                frmLayoutFit frm = new frmLayoutFit();
-                frm.MdiParent = this;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
+                fechaFilhos();
+                abreForm(CONTROL, btnPecas.Tag.ToString());
             }
             else
             {
                 TrocaImagens(PECAS);
                 TrocaTag(PECAS);
+                CONTROL = PECAS;
             }
         }
 
@@ -274,6 +273,24 @@ namespace prjTupperControl
                         frm = new frmLayoutFit();
                     }
                     
+                    frm.MdiParent = this;
+                    frm.Dock = DockStyle.Fill;
+                    frm.Show();
+                    break;
+                case 4:
+                    if (tag.Equals("Cadastro"))
+                    {
+                        frm = new frmCadPecas();
+                    }
+                    else if (tag.Equals("Ver Dados"))
+                    {
+                        frm = new frmDadosPecas();
+                    }
+                    else
+                    {
+                        frm = new frmLayoutFit();
+                    }
+
                     frm.MdiParent = this;
                     frm.Dock = DockStyle.Fill;
                     frm.Show();

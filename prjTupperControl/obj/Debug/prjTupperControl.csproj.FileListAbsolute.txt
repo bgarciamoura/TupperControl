@@ -1,12 +1,16 @@
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\bin\Debug\prjTupperControl.exe.config
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\bin\Debug\prjTupperControl.exe
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\bin\Debug\prjTupperControl.pdb
+C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.csprojResolveAssemblyReference.cache
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmCadClientes.resources
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmCadConsultora.resources
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmCadDocs.resources
+C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmCadPecas.resources
+C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmCadPecasCliente.resources
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmDadosClientes.resources
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmDadosConsultora.resources
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmEndereco.resources
+C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmPecasCliente.resources
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmLayoutFit.resources
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.frmMenuPrincipal.resources
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.Properties.Resources.resources
@@ -14,5 +18,4 @@ C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.csproj.CoreCompileInputs.cache
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.exe
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.pdb
-C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmPecasCliente.resources
-C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmCadPecasCliente.resources
+C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmDadosPecas.resources

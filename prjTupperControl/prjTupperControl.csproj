@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -82,6 +85,12 @@
     <Compile Include="View\frmCadDocs.Designer.cs">
       <DependentUpon>frmCadDocs.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmCadPecas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCadPecas.Designer.cs">
+      <DependentUpon>frmCadPecas.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmCadPecasCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +108,12 @@
     </Compile>
     <Compile Include="View\frmDadosConsultora.Designer.cs">
       <DependentUpon>frmDadosConsultora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmDadosPecas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmDadosPecas.Designer.cs">
+      <DependentUpon>frmDadosPecas.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmEndereco.cs">
       <SubType>Form</SubType>
@@ -135,6 +150,9 @@
     <EmbeddedResource Include="View\frmCadDocs.resx">
       <DependentUpon>frmCadDocs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCadPecas.resx">
+      <DependentUpon>frmCadPecas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmCadPecasCliente.resx">
       <DependentUpon>frmCadPecasCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmDadosConsultora.resx">
       <DependentUpon>frmDadosConsultora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmDadosPecas.resx">
+      <DependentUpon>frmDadosPecas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmEndereco.resx">
       <DependentUpon>frmEndereco.cs</DependentUpon>
@@ -172,6 +193,7 @@
     <None Include="Properties\DataSources\prjTupperControl.Model.CliNaoGosta.datasource" />
     <None Include="Properties\DataSources\prjTupperControl.Model.CliPreferidas.datasource" />
     <None Include="Properties\DataSources\prjTupperControl.Model.Consultora.datasource" />
+    <None Include="Properties\DataSources\prjTupperControl.Model.Pecas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -310,6 +332,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pencil_128x128_By Pixel Buddha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo_Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
