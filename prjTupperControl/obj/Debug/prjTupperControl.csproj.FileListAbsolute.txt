@@ -19,3 +19,5 @@ C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.exe
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.pdb
 C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.View.frmDadosPecas.resources
+C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\bin\Debug\MySql.Data.dll
+C:\Users\Bruno Garcia Moura\Documents\Visual Studio 2017\Projects\Tupper Control\prjTupperControl\obj\Debug\prjTupperControl.frmTestes.resources

@@ -35,6 +35,9 @@
     <ApplicationIcon>logo_Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.10\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\DbConnection.cs" />
+    <Compile Include="Controller\FileConn.cs" />
+    <Compile Include="frmTestes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestes.Designer.cs">
+      <DependentUpon>frmTestes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\BrindeCadastro.cs" />
     <Compile Include="Model\CliCompradas.cs" />
     <Compile Include="Model\CliDesejadas.cs" />
@@ -141,6 +152,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmTestes.resx">
+      <DependentUpon>frmTestes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmCadClientes.resx">
       <DependentUpon>frmCadClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +201,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\prjTupperControl.Model.CliCompradas.datasource" />
     <None Include="Properties\DataSources\prjTupperControl.Model.CliDesejadas.datasource" />
     <None Include="Properties\DataSources\prjTupperControl.Model.Clientes.datasource" />

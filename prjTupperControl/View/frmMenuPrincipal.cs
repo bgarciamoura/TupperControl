@@ -1,4 +1,5 @@
-﻿using prjTupperControl.View;
+﻿using prjTupperControl.Controller;
+using prjTupperControl.View;
 using System;
 using System.Windows.Forms;
 
@@ -10,6 +11,7 @@ namespace prjTupperControl
         public const int CLIENTE = 2;
         public const int CONSORCIO = 3;
         public const int PECAS = 4;
+        public const int SAIR = 5;
         int CONTROL = 0;
 
         public frmMenuPrincipal()
@@ -80,13 +82,12 @@ namespace prjTupperControl
             {
                 if (btnSair.Tag.Equals("Cadastro"))
                 {
-                    TrocaTag(5);
-                    TrocaImagens(5);
+                    btnSair_Click(sender, e);
                 }
                 else
                 {
-                    btnSair.Tag = "Sair";
-                    MessageBox.Show("Até mais Jaqueline!");
+                    TrocaTag(SAIR);
+                    MessageBox.Show("Até mais Jaqueline!", "Volte Sempre!");
                     this.Close();
                 }
             }
