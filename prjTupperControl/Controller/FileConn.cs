@@ -97,5 +97,12 @@ namespace prjTupperControl.Controller
             User = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(document.SelectSingleNode("Conexao").ChildNodes[2].InnerText));
             Password = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(document.SelectSingleNode("Conexao").ChildNodes[3].InnerText));
         }
+
+        public String createStringConn()
+        {
+            String conn = "Server={0};Database={1};Uid={2};Pwd={3}";
+            conn = String.Format(conn, new object[] { Server, Database, User, Password });
+            return conn;
+        }
     }
 }

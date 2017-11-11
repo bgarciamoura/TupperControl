@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\controllerUnidadeMedida.cs" />
     <Compile Include="Controller\DbConnection.cs" />
     <Compile Include="Controller\FileConn.cs" />
     <Compile Include="frmTestes.cs">
@@ -66,6 +67,7 @@
     <Compile Include="Model\CliNaoGosta.cs" />
     <Compile Include="Model\CliPreferidas.cs" />
     <Compile Include="Model\Consultora.cs" />
+    <Compile Include="Model\daoUnidadeMedida.cs" />
     <Compile Include="Model\Documentos.cs" />
     <Compile Include="Model\Endereco.cs" />
     <Compile Include="Model\Pecas.cs" />
