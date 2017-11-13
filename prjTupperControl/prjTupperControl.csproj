@@ -52,8 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\controllerUnidadeMedida.cs" />
-    <Compile Include="Controller\DbConnection.cs" />
-    <Compile Include="Controller\FileConn.cs" />
+    <Compile Include="Util\DbConnection.cs" />
+    <Compile Include="Util\FileConn.cs" />
     <Compile Include="frmTestes.cs">
       <SubType>Form</SubType>
     </Compile>
