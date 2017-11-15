@@ -95,7 +95,6 @@ namespace prjTupperControl.Model
             }
             catch (MySqlException x)
             {
-                MessageBox.Show("Erro ao inserir os dados, os dados já existem:\n" + x.ToString(), "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
         }
@@ -188,7 +187,7 @@ namespace prjTupperControl.Model
         public List<UnidadeMedida> GetAllUnidadesIncomplete(string find)
         {
             List<UnidadeMedida> unidadeList = new List<UnidadeMedida>();
-            MySqlConnection connection = PrepareConnection();
+            MySqlConnection connection = fileConn.PrepareConnection();// PrepareConnection();
 
 
             sqlCommand = connection.CreateCommand();

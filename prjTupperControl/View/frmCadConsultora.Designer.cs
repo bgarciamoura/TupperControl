@@ -55,6 +55,7 @@
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtCep = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.grbEndereco = new System.Windows.Forms.GroupBox();
             this.txtNumeroCasa = new System.Windows.Forms.TextBox();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
@@ -64,7 +65,6 @@
             this.rtxtObs = new System.Windows.Forms.RichTextBox();
             this.btnCadDoc = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.cmbSexo = new System.Windows.Forms.ComboBox();
             celularLabel = new System.Windows.Forms.Label();
             codigoLabel = new System.Windows.Forms.Label();
             dataCadastroLabel = new System.Windows.Forms.Label();
@@ -236,6 +236,16 @@
             cidadeLabel.TabIndex = 40;
             cidadeLabel.Text = "Cidade:";
             // 
+            // sexoLabel
+            // 
+            sexoLabel.AutoSize = true;
+            sexoLabel.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            sexoLabel.Location = new System.Drawing.Point(21, 153);
+            sexoLabel.Name = "sexoLabel";
+            sexoLabel.Size = new System.Drawing.Size(48, 17);
+            sexoLabel.TabIndex = 20;
+            sexoLabel.Text = "Sexo:";
+            // 
             // txtCelular
             // 
             this.txtCelular.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -243,6 +253,7 @@
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(200, 20);
             this.txtCelular.TabIndex = 5;
+            this.txtCelular.Text = "15981574134";
             this.txtCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCodigoConsultora
@@ -251,7 +262,8 @@
             this.txtCodigoConsultora.Location = new System.Drawing.Point(18, 58);
             this.txtCodigoConsultora.Name = "txtCodigoConsultora";
             this.txtCodigoConsultora.Size = new System.Drawing.Size(200, 20);
-            this.txtCodigoConsultora.TabIndex = 5;
+            this.txtCodigoConsultora.TabIndex = 13;
+            this.txtCodigoConsultora.Text = "1234";
             this.txtCodigoConsultora.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dtpDataCadastro
@@ -261,7 +273,7 @@
             this.dtpDataCadastro.Location = new System.Drawing.Point(18, 108);
             this.dtpDataCadastro.Name = "dtpDataCadastro";
             this.dtpDataCadastro.Size = new System.Drawing.Size(200, 20);
-            this.dtpDataCadastro.TabIndex = 7;
+            this.dtpDataCadastro.TabIndex = 14;
             // 
             // chkIsOk
             // 
@@ -270,7 +282,7 @@
             this.chkIsOk.Location = new System.Drawing.Point(183, 134);
             this.chkIsOk.Name = "chkIsOk";
             this.chkIsOk.Size = new System.Drawing.Size(123, 24);
-            this.chkIsOk.TabIndex = 9;
+            this.chkIsOk.TabIndex = 15;
             this.chkIsOk.UseVisualStyleBackColor = true;
             // 
             // txtIdade
@@ -280,6 +292,7 @@
             this.txtIdade.Name = "txtIdade";
             this.txtIdade.Size = new System.Drawing.Size(200, 20);
             this.txtIdade.TabIndex = 2;
+            this.txtIdade.Text = "12";
             this.txtIdade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dtpNascimento
@@ -299,6 +312,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(200, 20);
             this.txtNome.TabIndex = 1;
+            this.txtNome.Text = "Julia Sicolinho";
             this.txtNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtTelefone
@@ -308,6 +322,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(200, 20);
             this.txtTelefone.TabIndex = 4;
+            this.txtTelefone.Text = "1532922460";
             this.txtTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtBairro
@@ -316,7 +331,8 @@
             this.txtBairro.Location = new System.Drawing.Point(122, 98);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(205, 20);
-            this.txtBairro.TabIndex = 6;
+            this.txtBairro.TabIndex = 10;
+            this.txtBairro.Text = "Jardim das Acacias";
             this.txtBairro.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCep
@@ -325,7 +341,8 @@
             this.txtCep.Location = new System.Drawing.Point(122, 124);
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(205, 20);
-            this.txtCep.TabIndex = 7;
+            this.txtCep.TabIndex = 11;
+            this.txtCep.Text = "18160852";
             this.txtCep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox1
@@ -349,6 +366,19 @@
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
+            // 
+            // cmbSexo
+            // 
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSexo.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Items.AddRange(new object[] {
+            "Feminino  (F)",
+            "Masculino (M)"});
+            this.cmbSexo.Location = new System.Drawing.Point(123, 153);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(200, 24);
+            this.cmbSexo.TabIndex = 6;
             // 
             // grbEndereco
             // 
@@ -378,7 +408,8 @@
             this.txtNumeroCasa.Location = new System.Drawing.Point(122, 72);
             this.txtNumeroCasa.Name = "txtNumeroCasa";
             this.txtNumeroCasa.Size = new System.Drawing.Size(205, 20);
-            this.txtNumeroCasa.TabIndex = 39;
+            this.txtNumeroCasa.TabIndex = 9;
+            this.txtNumeroCasa.Text = "2";
             this.txtNumeroCasa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtLogradouro
@@ -387,7 +418,8 @@
             this.txtLogradouro.Location = new System.Drawing.Point(122, 46);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(205, 20);
-            this.txtLogradouro.TabIndex = 38;
+            this.txtLogradouro.TabIndex = 8;
+            this.txtLogradouro.Text = "Rua Linda";
             this.txtLogradouro.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCidade
@@ -396,7 +428,8 @@
             this.txtCidade.Location = new System.Drawing.Point(122, 20);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(205, 20);
-            this.txtCidade.TabIndex = 37;
+            this.txtCidade.TabIndex = 7;
+            this.txtCidade.Text = "Sorocaba";
             this.txtCidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // rtxtObsEndereco
@@ -405,7 +438,7 @@
             this.rtxtObsEndereco.Location = new System.Drawing.Point(24, 172);
             this.rtxtObsEndereco.Name = "rtxtObsEndereco";
             this.rtxtObsEndereco.Size = new System.Drawing.Size(303, 108);
-            this.rtxtObsEndereco.TabIndex = 11;
+            this.rtxtObsEndereco.TabIndex = 12;
             this.rtxtObsEndereco.Text = "";
             // 
             // grbOutrasInformacoes
@@ -432,7 +465,7 @@
             this.rtxtObs.Location = new System.Drawing.Point(18, 182);
             this.rtxtObs.Name = "rtxtObs";
             this.rtxtObs.Size = new System.Drawing.Size(281, 271);
-            this.rtxtObs.TabIndex = 35;
+            this.rtxtObs.TabIndex = 16;
             this.rtxtObs.Text = "";
             // 
             // btnCadDoc
@@ -463,29 +496,7 @@
             this.btnSalvar.Size = new System.Drawing.Size(75, 74);
             this.btnSalvar.TabIndex = 36;
             this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // cmbSexo
-            // 
-            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSexo.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSexo.FormattingEnabled = true;
-            this.cmbSexo.Items.AddRange(new object[] {
-            "Feminino  (F)",
-            "Masculino (M)"});
-            this.cmbSexo.Location = new System.Drawing.Point(123, 153);
-            this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(200, 24);
-            this.cmbSexo.TabIndex = 21;
-            // 
-            // sexoLabel
-            // 
-            sexoLabel.AutoSize = true;
-            sexoLabel.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            sexoLabel.Location = new System.Drawing.Point(21, 153);
-            sexoLabel.Name = "sexoLabel";
-            sexoLabel.Size = new System.Drawing.Size(48, 17);
-            sexoLabel.TabIndex = 20;
-            sexoLabel.Text = "Sexo:";
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // frmCadConsultora
             // 

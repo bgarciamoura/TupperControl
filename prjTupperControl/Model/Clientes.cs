@@ -6,21 +6,29 @@ using System.Threading.Tasks;
 
 namespace prjTupperControl.Model
 {
-    class Clientes : Pessoa
+    class Clientes
     {
         private String corPreferida;
         private bool pagaEmDia;
         private String observacoes;
+        private Pessoa pessoa;
 
         public Clientes()
         {
         }
 
-        public Clientes(string observacoes, bool pagaEmDia, string corPreferida)
+        public Clientes(string observacoes, bool pagaEmDia, string corPreferida, Pessoa pessoa)
         {
             Observacoes = observacoes;
             PagaEmDia = pagaEmDia;
             CorPreferida = corPreferida;
+            Pessoa = pessoa;
+        }
+        
+        public Pessoa Pessoa
+        {
+            get { return pessoa; }
+            set { pessoa = value; }
         }
 
         public String Observacoes

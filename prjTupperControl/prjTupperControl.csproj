@@ -51,7 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\controllerConsultora.cs" />
     <Compile Include="Controller\controllerUnidadeMedida.cs" />
+    <Compile Include="Model\DAO\daoConsultora.cs" />
     <Compile Include="Util\DbConnection.cs" />
     <Compile Include="Util\FileConn.cs" />
     <Compile Include="frmTestes.cs">
@@ -67,7 +69,7 @@
     <Compile Include="Model\CliNaoGosta.cs" />
     <Compile Include="Model\CliPreferidas.cs" />
     <Compile Include="Model\Consultora.cs" />
-    <Compile Include="Model\daoUnidadeMedida.cs" />
+    <Compile Include="Model\DAO\daoUnidadeMedida.cs" />
     <Compile Include="Model\Documentos.cs" />
     <Compile Include="Model\Endereco.cs" />
     <Compile Include="Model\Pecas.cs" />
@@ -354,5 +356,6 @@
     <Content Include="logo_Icon.ico" />
     <None Include="Resources\group2_ByFreepik_EdittedByVycros.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

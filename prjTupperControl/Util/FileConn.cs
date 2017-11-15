@@ -1,4 +1,5 @@
-﻿using prjTupperControl.Model;
+﻿using MySql.Data.MySqlClient;
+using prjTupperControl.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -102,6 +103,16 @@ namespace prjTupperControl.Controller
         {
             String conn = "Server={0};Database={1};Uid={2};Pwd={3}";
             conn = String.Format(conn, new object[] { Server, Database, User, Password });
+            return conn;
+        }
+
+        public MySqlConnection PrepareConnection()
+        {
+            String stringConn;
+            MySqlConnection conn;
+            OpenXml();
+            stringConn = createStringConn();
+            conn = new MySqlConnection(stringConn);
             return conn;
         }
     }

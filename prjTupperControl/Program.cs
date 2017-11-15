@@ -16,7 +16,7 @@ namespace prjTupperControl
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTestes());
+            Application.Run(new frmMenuPrincipal());
         }
     }
 }
