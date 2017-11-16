@@ -22,7 +22,7 @@ namespace prjTupperControl.Controller
         {
         }
 
-        public Boolean Inserir(List<Hashtable> dados)
+        public string Inserir(List<Hashtable> dados)
         {
             pessoa = ExtraiPessoa(dados[1]);
             pessoa.Endereco = ExtraiEndereco(dados[0]);
@@ -45,13 +45,20 @@ namespace prjTupperControl.Controller
         public Endereco ExtraiEndereco(Hashtable dadosEndereco)
         {
             Endereco endereco = new Endereco();
-            endereco.Logradouro = dadosEndereco["LOGRADOURO"].ToString();
-            endereco.Numero = Convert.ToInt32(dadosEndereco["NUMERO"]);
-            endereco.Bairro = dadosEndereco["BAIRRO"].ToString();
-            endereco.Cidade = dadosEndereco["CIDADE"].ToString();
-            endereco.Cep = Convert.ToInt32(dadosEndereco["CEP"]);
-            endereco.Observacoes = dadosEndereco["OBS"].ToString();
-            return endereco;
+            if (dadosEndereco["LOGRADOURO"].Equals(""))
+            {
+                return endereco = null;
+            }
+            else
+            {
+                endereco.Logradouro = dadosEndereco["LOGRADOURO"].ToString();
+                endereco.Numero = Convert.ToInt32(dadosEndereco["NUMERO"]);
+                endereco.Bairro = dadosEndereco["BAIRRO"].ToString();
+                endereco.Cidade = dadosEndereco["CIDADE"].ToString();
+                endereco.Cep = Convert.ToInt32(dadosEndereco["CEP"]);
+                endereco.Observacoes = dadosEndereco["OBS"].ToString();
+                return endereco;
+            }            
         }
 
         public Pessoa ExtraiPessoa(Hashtable dadosPessoa)

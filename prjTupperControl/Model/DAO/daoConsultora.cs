@@ -21,7 +21,7 @@ namespace prjTupperControl.Model.DAO
             fileConn = new FileConn();
         }
 
-        public Boolean Inserir(Consultora consultora)
+        public string Inserir(Consultora consultora)
         {
             int idRetornoEndereco = -2;
             int idRetornoPessoa = -2;
@@ -29,23 +29,41 @@ namespace prjTupperControl.Model.DAO
             connection.Open();
             sqlCommand = connection.CreateCommand();
 
-            if (!EnderecoExiste(consultora.Pessoa.Endereco.Logradouro, Convert.ToString(consultora.Pessoa.Endereco.Numero), consultora.Pessoa.Endereco.Bairro))
+            if (!PessoaExiste(consultora.Pessoa.Nome))
             {
-                if (!PessoaExiste(consultora.Pessoa.Nome))
+                if (!(consultora.Pessoa.Endereco == null))
                 {
-                    idRetornoEndereco = InserirEndereco(consultora.Pessoa.Endereco);
-
+                    if (!EnderecoExiste(consultora.Pessoa.Endereco.Logradouro, Convert.ToString(consultora.Pessoa.Endereco.Numero), consultora.Pessoa.Endereco.Bairro))
+                    {
+                        idRetornoEndereco = InserirEndereco(consultora.Pessoa.Endereco);
+                    }
+                    else
+                    {
+                        idRetornoEndereco = IDEndereco(consultora.Pessoa.Endereco.Logradouro, Convert.ToString(consultora.Pessoa.Endereco.Numero), consultora.Pessoa.Endereco.Bairro);
+                    }
+                    idRetornoPessoa = InserirPessoa(consultora.Pessoa, idRetornoEndereco);
+                }
+                else
+                {
+                    idRetornoPessoa = InserirPessoa(consultora.Pessoa, null);
                 }
                 
+                return (InserirConsultora(consultora, idRetornoPessoa) > 0) ? "Consultora cadastrada com sucesso!" : "Erro ao cadastrar consultora!";
+
             }
             else
             {
-                idRetornoEndereco = IDEndereco(consultora.Pessoa.Endereco.Logradouro, Convert.ToString(consultora.Pessoa.Endereco.Numero), consultora.Pessoa.Endereco.Bairro);
+                idRetornoPessoa = IDPessoa(consultora.Pessoa.Nome);
+                //idRetornoEndereco = IDEndereco(consultora.Pessoa.Endereco.Logradouro, Convert.ToString(consultora.Pessoa.Endereco.Numero), consultora.Pessoa.Endereco.Bairro);
+                if (ConsultoraExiste(idRetornoPessoa))
+                {
+                    return "Consultora já cadastrada";
+                }
+                else
+                {
+                    return (InserirConsultora(consultora, idRetornoPessoa) > 0) ? "Consultora cadastrada com sucesso!" : "Erro ao cadastrar consultora";
+                }
             }
-
-            //MessageBox.Show(Convert.ToString(idRetorno));
-
-            return true;
         }
 
         private int IDEndereco(string logradouro, string numero, string bairro)
@@ -138,6 +156,39 @@ namespace prjTupperControl.Model.DAO
             }
         }
 
+        public Boolean ConsultoraExiste(int ID)
+        {
+            //CRIA UMA NOVA CONEXÃO PARA A CONSULTA
+            MySqlConnection sqlConnection = fileConn.PrepareConnection();
+            try
+            {
+                //ABRE A CONEXÃO
+                sqlConnection.Open();
+
+                //CRIA UM COMANDO PARA REALIZAR A CONSULTA
+                MySqlCommand command = sqlConnection.CreateCommand();
+
+                //ADICIONA O PARAMETRO RECEBIDO A CONSULTA
+                command.Parameters.AddWithValue("PARAM1", ID);
+
+                //MONTA A CONSULTA
+                command.CommandText = "SELECT * FROM `tupper`.`tb_consultora` WHERE `tb_consultora`.`pes_ID` = @PARAM1;";
+
+                //JOGA O RETORNO DA SCALAR PARA UMA VARIAVEL.
+                var retorno = command.ExecuteScalar();
+
+                //FECHA A CONEXÃO
+                sqlConnection.Close();
+
+                //VERIFICA SE O A VARIAVEL RETORNO POSSUI ALGUM VALOR OU NÃO
+                return (retorno != null) ? true : false;
+            }
+            catch (MySqlException x)
+            {
+                throw;
+            }
+        }
+
         public int InserirEndereco(Endereco endereco)
         {
             MySqlConnection sqlConnection = fileConn.PrepareConnection();
@@ -169,7 +220,7 @@ namespace prjTupperControl.Model.DAO
             
         }
 
-        public int InserirPessoa(Pessoa pessoa, int enderecoID)
+        public int InserirPessoa(Pessoa pessoa, int? enderecoID)
         {
             MySqlConnection sqlConnection = fileConn.PrepareConnection();
             sqlConnection.Open();
@@ -193,7 +244,7 @@ namespace prjTupperControl.Model.DAO
             if (command.ExecuteNonQuery() == 1)
             {
                 MySqlCommand sqlCommand = sqlConnection.CreateCommand();
-                sqlCommand.CommandText = "SELECT MAX(end_ID) FROM tb_pessoa;";
+                sqlCommand.CommandText = "SELECT MAX(pes_ID) FROM tb_pessoa;";
                 return Convert.ToInt32(sqlCommand.ExecuteScalar());
             }
             else
@@ -201,6 +252,34 @@ namespace prjTupperControl.Model.DAO
                 return -1;
             }
 
+        }
+
+        public int InserirConsultora(Consultora consultora, int pessoaID)
+        {
+            MySqlConnection sqlConnection = fileConn.PrepareConnection();
+            sqlConnection.Open();
+            MySqlCommand command = sqlConnection.CreateCommand();
+            command.Parameters.AddWithValue("PESID", pessoaID);
+            command.Parameters.AddWithValue("CODCONSULTORA", consultora.Codigo);
+            command.Parameters.AddWithValue("DATACAD", consultora.DataCadastro);
+            command.Parameters.AddWithValue("OK", consultora.EstaOk);
+            command.Parameters.AddWithValue("OBS", consultora.Observacoes);
+            command.CommandText = "INSERT INTO `tupper`.`tb_consultora`(`pes_ID`,`con_Codigo`,`con_DataCadastro`,`con_EstaOk`,`con_Observacoes`)" +
+                                                                "VALUES(@PESID," +
+                                                                "@CODCONSULTORA," +
+                                                                "@DATACAD," +
+                                                                "@OK," +
+                                                                "@OBS);";
+            if (command.ExecuteNonQuery() == 1)
+            {
+                MySqlCommand sqlCommand = sqlConnection.CreateCommand();
+                sqlCommand.CommandText = "SELECT MAX(con_ID) FROM tb_consultora;";
+                return Convert.ToInt32(sqlCommand.ExecuteScalar());
+            }
+            else
+            {
+                return -1;
+            }
         }
     }
 }

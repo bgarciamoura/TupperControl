@@ -332,6 +332,7 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(205, 20);
             this.txtBairro.TabIndex = 10;
+            this.txtBairro.Tag = "Bairro";
             this.txtBairro.Text = "Jardim das Acacias";
             this.txtBairro.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -342,6 +343,7 @@
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(205, 20);
             this.txtCep.TabIndex = 11;
+            this.txtCep.Tag = "CEP";
             this.txtCep.Text = "18160852";
             this.txtCep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -409,6 +411,7 @@
             this.txtNumeroCasa.Name = "txtNumeroCasa";
             this.txtNumeroCasa.Size = new System.Drawing.Size(205, 20);
             this.txtNumeroCasa.TabIndex = 9;
+            this.txtNumeroCasa.Tag = "Número";
             this.txtNumeroCasa.Text = "2";
             this.txtNumeroCasa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -419,6 +422,7 @@
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(205, 20);
             this.txtLogradouro.TabIndex = 8;
+            this.txtLogradouro.Tag = "Logradouro";
             this.txtLogradouro.Text = "Rua Linda";
             this.txtLogradouro.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -429,6 +433,7 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(205, 20);
             this.txtCidade.TabIndex = 7;
+            this.txtCidade.Tag = "Cidade";
             this.txtCidade.Text = "Sorocaba";
             this.txtCidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
