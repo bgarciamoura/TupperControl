@@ -56,6 +56,7 @@ namespace prjTupperControl.View
 
                 dadosConsultor.Add("DATACAD", dtpDataCadastro.Value.ToShortDateString());
                 dadosConsultor.Add("CADOK", (chkIsOk.Checked) ? 1 : 0);
+                dadosConsultor.Add("ATIVA", (chkAtiva.Checked) ? 1 : 0);
                 dadosConsultor.Add("OBS", rtxtObs.Text);
                 //MessageBox.Show(Convert.ToString((chkIsOk.Checked) ? 1 : 0));
 

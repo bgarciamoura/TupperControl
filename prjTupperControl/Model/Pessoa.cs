@@ -4,6 +4,7 @@ namespace prjTupperControl.Model
 {
     class Pessoa
     {
+        private int codPessoa;
         private String nome;
         private DateTime nascimento;
         private int idade;
@@ -16,8 +17,9 @@ namespace prjTupperControl.Model
         {
         }
 
-        public Pessoa(Endereco endereco, string celular, string telefone, int idade, DateTime nascimento, string nome, char sexo)
+        public Pessoa(int codPessoa, Endereco endereco, string celular, string telefone, int idade, DateTime nascimento, string nome, char sexo)
         {
+            CodPessoa = codPessoa;
             Endereco = endereco;
             Celular = celular;
             Telefone = telefone;
@@ -25,6 +27,12 @@ namespace prjTupperControl.Model
             Nascimento = nascimento;
             Nome = nome;
             Sexo = sexo;
+        }
+        
+        public int CodPessoa
+        {
+            get { return codPessoa; }
+            set { codPessoa = value; }
         }
 
         public char Sexo

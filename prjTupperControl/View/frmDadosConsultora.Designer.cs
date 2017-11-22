@@ -30,28 +30,33 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvConsultora = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.consultoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlProcurar = new System.Windows.Forms.Panel();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvDocumentos = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnEndereco = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnBrinde = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnCadDoc = new System.Windows.Forms.Button();
+            this.dgvEndereco = new System.Windows.Forms.DataGridView();
+            this.logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ATIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultoraBindingSource)).BeginInit();
             this.pnlProcurar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEndereco)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvConsultora
@@ -62,41 +67,21 @@
             this.dgvConsultora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvConsultora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultora.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
+            this.ID,
             this.Column5,
+            this.Column4,
+            this.ATIVA,
             this.Column7,
             this.Column6});
             this.dgvConsultora.Location = new System.Drawing.Point(148, 63);
             this.dgvConsultora.MultiSelect = false;
             this.dgvConsultora.Name = "dgvConsultora";
             this.dgvConsultora.ReadOnly = true;
+            this.dgvConsultora.RowHeadersVisible = false;
             this.dgvConsultora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultora.Size = new System.Drawing.Size(802, 283);
             this.dgvConsultora.TabIndex = 2;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Nome";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Código";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Celular";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Observações";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.dgvConsultora.SelectionChanged += new System.EventHandler(this.dgvConsultora_SelectionChanged);
             // 
             // consultoraBindingSource
             // 
@@ -130,41 +115,6 @@
             this.label1.Size = new System.Drawing.Size(304, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Digite o Nome ou Código da Consultora";
-            // 
-            // dgvDocumentos
-            // 
-            this.dgvDocumentos.AllowUserToAddRows = false;
-            this.dgvDocumentos.AllowUserToDeleteRows = false;
-            this.dgvDocumentos.AllowUserToResizeRows = false;
-            this.dgvDocumentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDocumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDocumentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dgvDocumentos.Location = new System.Drawing.Point(148, 352);
-            this.dgvDocumentos.Name = "dgvDocumentos";
-            this.dgvDocumentos.ReadOnly = true;
-            this.dgvDocumentos.Size = new System.Drawing.Size(802, 129);
-            this.dgvDocumentos.TabIndex = 3;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tipo Documento";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Número do Documento";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Foto do Documento";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // btnEndereco
             // 
@@ -237,19 +187,123 @@
             this.btnCadDoc.TabIndex = 36;
             this.btnCadDoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadDoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnCadDoc, "Visualizar e cadastrar documentos");
             this.btnCadDoc.UseVisualStyleBackColor = true;
+            this.btnCadDoc.Click += new System.EventHandler(this.btnCadDoc_Click);
+            // 
+            // dgvEndereco
+            // 
+            this.dgvEndereco.AllowUserToAddRows = false;
+            this.dgvEndereco.AllowUserToDeleteRows = false;
+            this.dgvEndereco.AllowUserToResizeRows = false;
+            this.dgvEndereco.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEndereco.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEndereco.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.logradouro,
+            this.numero,
+            this.bairro,
+            this.cidade,
+            this.cep,
+            this.obs});
+            this.dgvEndereco.Location = new System.Drawing.Point(148, 352);
+            this.dgvEndereco.Name = "dgvEndereco";
+            this.dgvEndereco.ReadOnly = true;
+            this.dgvEndereco.RowHeadersVisible = false;
+            this.dgvEndereco.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEndereco.ShowEditingIcon = false;
+            this.dgvEndereco.Size = new System.Drawing.Size(802, 140);
+            this.dgvEndereco.TabIndex = 37;
+            // 
+            // logradouro
+            // 
+            this.logradouro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.logradouro.HeaderText = "Logradouro";
+            this.logradouro.Name = "logradouro";
+            this.logradouro.ReadOnly = true;
+            // 
+            // numero
+            // 
+            this.numero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.numero.HeaderText = "Número";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            // 
+            // bairro
+            // 
+            this.bairro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            this.bairro.ReadOnly = true;
+            // 
+            // cidade
+            // 
+            this.cidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            this.cidade.ReadOnly = true;
+            // 
+            // cep
+            // 
+            this.cep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cep.HeaderText = "CEP";
+            this.cep.Name = "cep";
+            this.cep.ReadOnly = true;
+            // 
+            // obs
+            // 
+            this.obs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.obs.HeaderText = "Observações";
+            this.obs.Name = "obs";
+            this.obs.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "IDPESSOA";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Código";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Nome";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // ATIVA
+            // 
+            this.ATIVA.HeaderText = "Está Ativa?";
+            this.ATIVA.Name = "ATIVA";
+            this.ATIVA.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Celular";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Observações";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // frmDadosConsultora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 584);
+            this.Controls.Add(this.dgvEndereco);
             this.Controls.Add(this.btnCadDoc);
             this.Controls.Add(this.btnBrinde);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEndereco);
-            this.Controls.Add(this.dgvDocumentos);
             this.Controls.Add(this.pnlProcurar);
             this.Controls.Add(this.dgvConsultora);
             this.Name = "frmDadosConsultora";
@@ -257,17 +311,17 @@
             this.Load += new System.EventHandler(this.frmDadosConsultora_Load);
             this.Controls.SetChildIndex(this.dgvConsultora, 0);
             this.Controls.SetChildIndex(this.pnlProcurar, 0);
-            this.Controls.SetChildIndex(this.dgvDocumentos, 0);
             this.Controls.SetChildIndex(this.btnEndereco, 0);
             this.Controls.SetChildIndex(this.btnExcluir, 0);
             this.Controls.SetChildIndex(this.btnEditar, 0);
             this.Controls.SetChildIndex(this.btnBrinde, 0);
             this.Controls.SetChildIndex(this.btnCadDoc, 0);
+            this.Controls.SetChildIndex(this.dgvEndereco, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultoraBindingSource)).EndInit();
             this.pnlProcurar.ResumeLayout(false);
             this.pnlProcurar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEndereco)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,10 +333,6 @@
         private System.Windows.Forms.Panel pnlProcurar;
         private System.Windows.Forms.TextBox txtProcurar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvDocumentos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewImageColumn Column3;
         private System.Windows.Forms.Button btnEndereco;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
@@ -294,8 +344,17 @@
         private System.Windows.Forms.Button btnBrinde;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnCadDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridView dgvEndereco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn logradouro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn obs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ATIVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }

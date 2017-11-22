@@ -44,6 +44,7 @@
             System.Windows.Forms.Label logradouroLabel;
             System.Windows.Forms.Label cidadeLabel;
             System.Windows.Forms.Label sexoLabel;
+            System.Windows.Forms.Label label2;
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.txtCodigoConsultora = new System.Windows.Forms.TextBox();
             this.dtpDataCadastro = new System.Windows.Forms.DateTimePicker();
@@ -64,6 +65,7 @@
             this.grbOutrasInformacoes = new System.Windows.Forms.GroupBox();
             this.rtxtObs = new System.Windows.Forms.RichTextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.chkAtiva = new System.Windows.Forms.CheckBox();
             celularLabel = new System.Windows.Forms.Label();
             codigoLabel = new System.Windows.Forms.Label();
             dataCadastroLabel = new System.Windows.Forms.Label();
@@ -80,6 +82,7 @@
             logradouroLabel = new System.Windows.Forms.Label();
             cidadeLabel = new System.Windows.Forms.Label();
             sexoLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grbEndereco.SuspendLayout();
             this.grbOutrasInformacoes.SuspendLayout();
@@ -159,7 +162,7 @@
             // 
             observacoesLabel.AutoSize = true;
             observacoesLabel.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            observacoesLabel.Location = new System.Drawing.Point(113, 161);
+            observacoesLabel.Location = new System.Drawing.Point(114, 191);
             observacoesLabel.Name = "observacoesLabel";
             observacoesLabel.Size = new System.Drawing.Size(104, 17);
             observacoesLabel.TabIndex = 16;
@@ -278,9 +281,9 @@
             // 
             this.chkIsOk.FlatAppearance.BorderSize = 3;
             this.chkIsOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkIsOk.Location = new System.Drawing.Point(183, 134);
+            this.chkIsOk.Location = new System.Drawing.Point(223, 134);
             this.chkIsOk.Name = "chkIsOk";
-            this.chkIsOk.Size = new System.Drawing.Size(123, 24);
+            this.chkIsOk.Size = new System.Drawing.Size(83, 24);
             this.chkIsOk.TabIndex = 15;
             this.chkIsOk.UseVisualStyleBackColor = true;
             // 
@@ -447,6 +450,8 @@
             // 
             // grbOutrasInformacoes
             // 
+            this.grbOutrasInformacoes.Controls.Add(this.chkAtiva);
+            this.grbOutrasInformacoes.Controls.Add(label2);
             this.grbOutrasInformacoes.Controls.Add(this.rtxtObs);
             this.grbOutrasInformacoes.Controls.Add(observacoesLabel);
             this.grbOutrasInformacoes.Controls.Add(this.chkIsOk);
@@ -466,9 +471,9 @@
             // rtxtObs
             // 
             this.rtxtObs.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtObs.Location = new System.Drawing.Point(18, 182);
+            this.rtxtObs.Location = new System.Drawing.Point(18, 211);
             this.rtxtObs.Name = "rtxtObs";
-            this.rtxtObs.Size = new System.Drawing.Size(281, 271);
+            this.rtxtObs.Size = new System.Drawing.Size(281, 242);
             this.rtxtObs.TabIndex = 16;
             this.rtxtObs.Text = "";
             // 
@@ -484,6 +489,26 @@
             this.btnSalvar.TabIndex = 36;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // chkAtiva
+            // 
+            this.chkAtiva.FlatAppearance.BorderSize = 3;
+            this.chkAtiva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAtiva.Location = new System.Drawing.Point(223, 164);
+            this.chkAtiva.Name = "chkAtiva";
+            this.chkAtiva.Size = new System.Drawing.Size(76, 24);
+            this.chkAtiva.TabIndex = 18;
+            this.chkAtiva.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(17, 168);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(200, 17);
+            label2.TabIndex = 17;
+            label2.Text = "A consultora está ativa?";
             // 
             // frmCadConsultora
             // 
@@ -532,5 +557,6 @@
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.ComboBox cmbSexo;
+        private System.Windows.Forms.CheckBox chkAtiva;
     }
 }

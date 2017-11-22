@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,15 @@ namespace prjTupperControl.View
 {
     public partial class frmCadDocs : Form
     {
+        private Hashtable pessoa;
+
+        public Hashtable Pessoa
+        {
+            get { return pessoa; }
+            set { pessoa = value; }
+        }
+
+
         public frmCadDocs()
         {
             InitializeComponent();
@@ -29,6 +39,12 @@ namespace prjTupperControl.View
             {
                 MessageBox.Show("Imagem salva");
             }
+        }
+
+        private void cmbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtNumero.Enabled = true;
+            //MessageBox.Show(Pessoa["ID_Consultora"].ToString() + " " + Pessoa["Nome_Pessoa"].ToString());
         }
     }
 }

@@ -100,6 +100,7 @@ namespace prjTupperControl.Model.DAO
                 enderecoAux.Numero = Convert.ToInt32(VerificaINT(row["end_Numero"].ToString()));
                 enderecoAux.Observacoes = row["end_Observacao"].ToString();
                 //PESSOA
+                pessoaAux.CodPessoa = Convert.ToInt32(row["pes_ID"]);
                 pessoaAux.Nome = row["pes_Nome"].ToString();
                 pessoaAux.Celular = row["pes_Celular"].ToString();
                 pessoaAux.Telefone = row["pes_Telefone"].ToString();
@@ -107,9 +108,11 @@ namespace prjTupperControl.Model.DAO
                 pessoaAux.Nascimento = Convert.ToDateTime(row["pes_Nascimento"]);
                 pessoaAux.Idade = Convert.ToInt32(row["pes_Idade"]);
                 //CONSULTORA
+                consultoraAux.CodConsultora = Convert.ToInt32(row["con_ID"]);
                 consultoraAux.Codigo = Convert.ToInt32(row["con_Codigo"]);
                 consultoraAux.DataCadastro = Convert.ToDateTime(row["con_DataCadastro"]);
                 consultoraAux.EstaOk = Convert.ToBoolean(row["con_EstaOk"]);
+                consultoraAux.EstaAtiva = Convert.ToBoolean(row["con_Ativa"]);
                 consultoraAux.Observacoes = row["con_Observacoes"].ToString();
                 pessoaAux.Endereco = enderecoAux;
                 consultoraAux.Pessoa = pessoaAux;
@@ -152,6 +155,7 @@ namespace prjTupperControl.Model.DAO
                 enderecoAux.Numero = Convert.ToInt32(VerificaINT(row["end_Numero"].ToString()));
                 enderecoAux.Observacoes = row["end_Observacao"].ToString();
                 //PESSOA
+                pessoaAux.CodPessoa = Convert.ToInt32(row["pes_ID"]);
                 pessoaAux.Nome = row["pes_Nome"].ToString();
                 pessoaAux.Celular = row["pes_Celular"].ToString();
                 pessoaAux.Telefone = row["pes_Telefone"].ToString();
@@ -159,9 +163,11 @@ namespace prjTupperControl.Model.DAO
                 pessoaAux.Nascimento = Convert.ToDateTime(row["pes_Nascimento"]);
                 pessoaAux.Idade = Convert.ToInt32(row["pes_Idade"]);
                 //CONSULTORA
+                consultoraAux.CodConsultora = Convert.ToInt32(row["con_ID"]);
                 consultoraAux.Codigo = Convert.ToInt32(row["con_Codigo"]);
                 consultoraAux.DataCadastro = Convert.ToDateTime(row["con_DataCadastro"]);
                 consultoraAux.EstaOk = Convert.ToBoolean(row["con_EstaOk"]);
+                consultoraAux.EstaAtiva = Convert.ToBoolean(row["con_Ativa"]);
                 consultoraAux.Observacoes = row["con_Observacoes"].ToString();
                 pessoaAux.Endereco = enderecoAux;
                 consultoraAux.Pessoa = pessoaAux;
@@ -369,12 +375,14 @@ namespace prjTupperControl.Model.DAO
             command.Parameters.AddWithValue("CODCONSULTORA", consultora.Codigo);
             command.Parameters.AddWithValue("DATACAD", consultora.DataCadastro);
             command.Parameters.AddWithValue("OK", consultora.EstaOk);
+            command.Parameters.AddWithValue("ATIVA", consultora.EstaAtiva);
             command.Parameters.AddWithValue("OBS", consultora.Observacoes);
-            command.CommandText = "INSERT INTO `tupper`.`tb_consultora`(`pes_ID`,`con_Codigo`,`con_DataCadastro`,`con_EstaOk`,`con_Observacoes`)" +
+            command.CommandText = "INSERT INTO `tupper`.`tb_consultora`(`pes_ID`,`con_Codigo`,`con_DataCadastro`,`con_EstaOk`, `con_Ativa`,`con_Observacoes`)" +
                                                                 "VALUES(@PESID," +
                                                                 "@CODCONSULTORA," +
                                                                 "@DATACAD," +
                                                                 "@OK," +
+                                                                "@ATIVA, " +
                                                                 "@OBS);";
             if (command.ExecuteNonQuery() == 1)
             {

@@ -41,16 +41,22 @@ namespace prjTupperControl.Controller
             for (int i = 0; i < listaRetorno.Count; i++)
             {
                 Hashtable hashtable = new Hashtable();
+                //CONSULTORA
+                hashtable.Add("ID_Consultora", listaRetorno[i].CodConsultora);
                 hashtable.Add("Codigo_Consultora", listaRetorno[i].Codigo);
                 hashtable.Add("Data_Consultora", listaRetorno[i].DataCadastro);
                 hashtable.Add("EstaOk_Consultora", listaRetorno[i].EstaOk);
+                hashtable.Add("Ativa_Consultora", listaRetorno[i].EstaAtiva);
                 hashtable.Add("Obs_Consultora", listaRetorno[i].Observacoes);
+                //PESSOA
+                hashtable.Add("ID_Pessoa", listaRetorno[i].Pessoa.CodPessoa);
                 hashtable.Add("Nome_Pessoa", listaRetorno[i].Pessoa.Nome);
                 hashtable.Add("Nasc_Pessoa", listaRetorno[i].Pessoa.Nascimento);
                 hashtable.Add("Idade_Pessoa", listaRetorno[i].Pessoa.Idade);
                 hashtable.Add("Sexo_Pessoa", listaRetorno[i].Pessoa.Sexo);
                 hashtable.Add("Telefone_Pessoa", listaRetorno[i].Pessoa.Telefone);
                 hashtable.Add("Celular_Pessoa", listaRetorno[i].Pessoa.Celular);
+                //ENDEREÇO
                 hashtable.Add("Logra_Endereco", listaRetorno[i].Pessoa.Endereco.Logradouro);
                 hashtable.Add("Numero_Endereco", listaRetorno[i].Pessoa.Endereco.Numero);
                 hashtable.Add("Bairro_Endereco", listaRetorno[i].Pessoa.Endereco.Bairro);
@@ -72,16 +78,22 @@ namespace prjTupperControl.Controller
             for (int i = 0; i < listaRetorno.Count; i++)
             {
                 Hashtable hashtable = new Hashtable();
+                //CONSULTORA
+                hashtable.Add("ID_Consultora", listaRetorno[i].CodConsultora);
                 hashtable.Add("Codigo_Consultora", listaRetorno[i].Codigo);
                 hashtable.Add("Data_Consultora", listaRetorno[i].DataCadastro);
                 hashtable.Add("EstaOk_Consultora", listaRetorno[i].EstaOk);
+                hashtable.Add("Ativa_Consultora", listaRetorno[i].EstaAtiva);
                 hashtable.Add("Obs_Consultora", listaRetorno[i].Observacoes);
+                //PESSOA
+                hashtable.Add("ID_Pessoa", listaRetorno[i].Pessoa.CodPessoa);
                 hashtable.Add("Nome_Pessoa", listaRetorno[i].Pessoa.Nome);
                 hashtable.Add("Nasc_Pessoa", listaRetorno[i].Pessoa.Nascimento);
                 hashtable.Add("Idade_Pessoa", listaRetorno[i].Pessoa.Idade);
                 hashtable.Add("Sexo_Pessoa", listaRetorno[i].Pessoa.Sexo);
                 hashtable.Add("Telefone_Pessoa", listaRetorno[i].Pessoa.Telefone);
                 hashtable.Add("Celular_Pessoa", listaRetorno[i].Pessoa.Celular);
+                //ENDEREÇO
                 hashtable.Add("Logra_Endereco", listaRetorno[i].Pessoa.Endereco.Logradouro);
                 hashtable.Add("Numero_Endereco", listaRetorno[i].Pessoa.Endereco.Numero);
                 hashtable.Add("Bairro_Endereco", listaRetorno[i].Pessoa.Endereco.Bairro);
@@ -97,9 +109,11 @@ namespace prjTupperControl.Controller
         private Consultora ExtraiConsultora(Hashtable dadosConsultora)
         {
             Consultora consultora = new Consultora();
+            consultora.CodConsultora = Convert.ToInt32(dadosConsultora["ID_CONSULTORA"]);
             consultora.Codigo = Convert.ToInt32(dadosConsultora["CODIGO"]);
             consultora.DataCadastro = Convert.ToDateTime(dadosConsultora["DATACAD"]);
             consultora.EstaOk = Convert.ToBoolean(dadosConsultora["CADOK"]);
+            consultora.EstaAtiva = Convert.ToBoolean(dadosConsultora["ATIVA"]);
             consultora.Observacoes = dadosConsultora["OBS"].ToString();
             return consultora;
         }
@@ -126,6 +140,7 @@ namespace prjTupperControl.Controller
         public Pessoa ExtraiPessoa(Hashtable dadosPessoa)
         {
             Pessoa pessoa = new Pessoa();
+            pessoa.CodPessoa = Convert.ToInt32(dadosPessoa["ID_PESSOA"]);
             pessoa.Nome = dadosPessoa["NOME"].ToString();
             pessoa.Idade = Convert.ToInt32(dadosPessoa["IDADE"]);
             pessoa.Nascimento = Convert.ToDateTime(dadosPessoa["NASCIMENTO"]);

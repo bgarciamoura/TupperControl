@@ -11,20 +11,30 @@ namespace prjTupperControl.Model
         private long codigo;
         private DateTime dataCadastro;
         private bool estaOk;
+        private bool estaAtiva;
         private String observacoes;
         private Pessoa pessoa;
-        
+        private int codConsultora;
+
         public Consultora()
         {
         }
 
-        public Consultora(string observacoes, bool estaOk, DateTime dataCadastro, long codigo, Pessoa pessoa)
+        public Consultora(string observacoes, bool estaOk, bool estaAtiva, DateTime dataCadastro, long codigo, Pessoa pessoa, int codConsultora)
         {
             Observacoes = observacoes;
             EstaOk = estaOk;
+            EstaAtiva = estaAtiva;
             DataCadastro = dataCadastro;
             Codigo = codigo;
             Pessoa = pessoa;
+            CodConsultora = codConsultora;
+        }
+
+        public int CodConsultora
+        {
+            get { return codConsultora; }
+            set { codConsultora = value; }
         }
 
         public Pessoa Pessoa
@@ -43,6 +53,12 @@ namespace prjTupperControl.Model
         {
             get { return estaOk; }
             set { estaOk = value; }
+        }
+
+        public bool EstaAtiva
+        {
+            get { return estaAtiva; }
+            set { estaAtiva = value; }
         }
 
         public DateTime DataCadastro
