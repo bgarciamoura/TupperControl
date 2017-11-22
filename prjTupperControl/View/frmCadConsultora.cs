@@ -126,5 +126,37 @@ namespace prjTupperControl.View
             }
             
         }
+
+        private void LimpaCampos(Control control)
+        {
+            foreach (Control crtl in control.Controls)
+            {
+                if (crtl.GetType().Equals(typeof(GroupBox)))
+                {
+                    LimpaCampos(crtl);
+                }
+                if (crtl.GetType().Equals(typeof(TextBox)))
+                {
+                    (crtl as TextBox).Text = "";
+                }
+                if (crtl.GetType().Equals(typeof(ComboBox)))
+                {
+                    (crtl as ComboBox).SelectedIndex = 0;
+                }
+                if (crtl.GetType().Equals(typeof(DateTimePicker)))
+                {
+                    (crtl as DateTimePicker).Value = DateTime.Now.Date;
+                }
+                if (crtl.GetType().Equals(typeof(RichTextBox)))
+                {
+                    (crtl as RichTextBox).Text = "";
+                }
+                if (crtl.GetType().Equals(typeof(CheckBox)))
+                {
+                    (crtl as CheckBox).Checked = false;
+                }
+            }
+        }
+        
     }
 }

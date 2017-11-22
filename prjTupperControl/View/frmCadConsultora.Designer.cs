@@ -63,7 +63,6 @@
             this.rtxtObsEndereco = new System.Windows.Forms.RichTextBox();
             this.grbOutrasInformacoes = new System.Windows.Forms.GroupBox();
             this.rtxtObs = new System.Windows.Forms.RichTextBox();
-            this.btnCadDoc = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             celularLabel = new System.Windows.Forms.Label();
             codigoLabel = new System.Windows.Forms.Label();
@@ -473,30 +472,13 @@
             this.rtxtObs.TabIndex = 16;
             this.rtxtObs.Text = "";
             // 
-            // btnCadDoc
-            // 
-            this.btnCadDoc.BackgroundImage = global::prjTupperControl.Properties.Resources.ID;
-            this.btnCadDoc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCadDoc.FlatAppearance.BorderSize = 0;
-            this.btnCadDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadDoc.Font = new System.Drawing.Font("Palatino Linotype", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadDoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadDoc.Location = new System.Drawing.Point(286, 498);
-            this.btnCadDoc.Name = "btnCadDoc";
-            this.btnCadDoc.Size = new System.Drawing.Size(127, 74);
-            this.btnCadDoc.TabIndex = 35;
-            this.btnCadDoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadDoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCadDoc.UseVisualStyleBackColor = true;
-            this.btnCadDoc.Click += new System.EventHandler(this.btnCadDoc_Click);
-            // 
             // btnSalvar
             // 
             this.btnSalvar.BackgroundImage = global::prjTupperControl.Properties.Resources.floppy_128x128_By_Freepik;
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(659, 498);
+            this.btnSalvar.Location = new System.Drawing.Point(489, 498);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 74);
             this.btnSalvar.TabIndex = 36;
@@ -509,7 +491,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 584);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnCadDoc);
             this.Controls.Add(this.grbOutrasInformacoes);
             this.Controls.Add(this.grbEndereco);
             this.Controls.Add(this.groupBox1);
@@ -518,7 +499,6 @@
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.grbEndereco, 0);
             this.Controls.SetChildIndex(this.grbOutrasInformacoes, 0);
-            this.Controls.SetChildIndex(this.btnCadDoc, 0);
             this.Controls.SetChildIndex(this.btnSalvar, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -550,7 +530,6 @@
         private System.Windows.Forms.TextBox txtNumeroCasa;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.TextBox txtCidade;
-        private System.Windows.Forms.Button btnCadDoc;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.ComboBox cmbSexo;
     }

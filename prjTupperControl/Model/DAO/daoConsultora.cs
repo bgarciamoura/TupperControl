@@ -2,6 +2,7 @@
 using prjTupperControl.Controller;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,6 +65,111 @@ namespace prjTupperControl.Model.DAO
                     return (InserirConsultora(consultora, idRetornoPessoa) > 0) ? "Consultora cadastrada com sucesso!" : "Erro ao cadastrar consultora";
                 }
             }
+        }
+
+        public List<Consultora> BuscarPesquisa(string aux)
+        {
+            List<Consultora> listaConsultora = new List<Consultora>();
+            Consultora consultoraAux;
+            Pessoa pessoaAux;
+            Endereco enderecoAux;
+
+            connection = fileConn.PrepareConnection();
+            connection.Open();
+            sqlCommand = connection.CreateCommand();
+            sqlCommand.Parameters.AddWithValue("aux", "%"+ aux + "%");
+            sqlCommand.CommandText = "SELECT * FROM tb_pessoa p INNER JOIN tb_consultora c ON p.pes_ID = c.pes_ID " +
+                                                                "LEFT JOIN tb_endereco e ON e.end_ID = p.end_ID " +
+                                                                "WHERE p.pes_Nome LIKE @aux OR c.con_Codigo LIKE @aux " +
+                                                                "ORDER BY(p.pes_ID);";
+
+            DataTable dt = new DataTable();
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCommand);
+            dataAdapter.Fill(dt);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                consultoraAux = new Consultora();
+                pessoaAux = new Pessoa();
+                enderecoAux = new Endereco();
+                //ENDEREÇO
+                enderecoAux.Bairro = row["end_Bairro"].ToString();
+                enderecoAux.Cep = Convert.ToInt32(VerificaINT(row["end_Cep"].ToString()));
+                enderecoAux.Cidade = row["end_Cidade"].ToString();
+                enderecoAux.Logradouro = row["end_Logradouro"].ToString();
+                enderecoAux.Numero = Convert.ToInt32(VerificaINT(row["end_Numero"].ToString()));
+                enderecoAux.Observacoes = row["end_Observacao"].ToString();
+                //PESSOA
+                pessoaAux.Nome = row["pes_Nome"].ToString();
+                pessoaAux.Celular = row["pes_Celular"].ToString();
+                pessoaAux.Telefone = row["pes_Telefone"].ToString();
+                pessoaAux.Sexo = Convert.ToChar(row["pes_Sexo"]);
+                pessoaAux.Nascimento = Convert.ToDateTime(row["pes_Nascimento"]);
+                pessoaAux.Idade = Convert.ToInt32(row["pes_Idade"]);
+                //CONSULTORA
+                consultoraAux.Codigo = Convert.ToInt32(row["con_Codigo"]);
+                consultoraAux.DataCadastro = Convert.ToDateTime(row["con_DataCadastro"]);
+                consultoraAux.EstaOk = Convert.ToBoolean(row["con_EstaOk"]);
+                consultoraAux.Observacoes = row["con_Observacoes"].ToString();
+                pessoaAux.Endereco = enderecoAux;
+                consultoraAux.Pessoa = pessoaAux;
+
+                listaConsultora.Add(consultoraAux);
+            }
+
+            return listaConsultora;
+        }
+
+        public List<Consultora> RetornaTudo()
+        {
+            List<Consultora> listaConsultora = new List<Consultora>();
+            Consultora consultoraAux;
+            Pessoa pessoaAux;
+            Endereco enderecoAux;
+
+            connection = fileConn.PrepareConnection();
+            connection.Open();
+            sqlCommand = connection.CreateCommand();
+
+            sqlCommand.CommandText = "SELECT * FROM tb_pessoa p INNER JOIN tb_consultora c ON p.pes_ID = c.pes_ID " +
+                                                                "LEFT JOIN tb_endereco e ON e.end_ID = p.end_ID " +
+                                                                "ORDER BY(p.pes_ID);";
+            
+            DataTable dt = new DataTable();
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCommand);
+            dataAdapter.Fill(dt);
+            
+            foreach (DataRow row in dt.Rows)
+            {
+                consultoraAux = new Consultora();
+                pessoaAux = new Pessoa();
+                enderecoAux = new Endereco();
+                //ENDEREÇO
+                enderecoAux.Bairro = row["end_Bairro"].ToString();
+                enderecoAux.Cep = Convert.ToInt32(VerificaINT(row["end_Cep"].ToString()));
+                enderecoAux.Cidade = row["end_Cidade"].ToString();
+                enderecoAux.Logradouro = row["end_Logradouro"].ToString();
+                enderecoAux.Numero = Convert.ToInt32(VerificaINT(row["end_Numero"].ToString()));
+                enderecoAux.Observacoes = row["end_Observacao"].ToString();
+                //PESSOA
+                pessoaAux.Nome = row["pes_Nome"].ToString();
+                pessoaAux.Celular = row["pes_Celular"].ToString();
+                pessoaAux.Telefone = row["pes_Telefone"].ToString();
+                pessoaAux.Sexo = Convert.ToChar(row["pes_Sexo"]);
+                pessoaAux.Nascimento = Convert.ToDateTime(row["pes_Nascimento"]);
+                pessoaAux.Idade = Convert.ToInt32(row["pes_Idade"]);
+                //CONSULTORA
+                consultoraAux.Codigo = Convert.ToInt32(row["con_Codigo"]);
+                consultoraAux.DataCadastro = Convert.ToDateTime(row["con_DataCadastro"]);
+                consultoraAux.EstaOk = Convert.ToBoolean(row["con_EstaOk"]);
+                consultoraAux.Observacoes = row["con_Observacoes"].ToString();
+                pessoaAux.Endereco = enderecoAux;
+                consultoraAux.Pessoa = pessoaAux;
+
+                listaConsultora.Add(consultoraAux);
+            }
+            
+            return listaConsultora;
         }
 
         private int IDEndereco(string logradouro, string numero, string bairro)
@@ -279,6 +385,30 @@ namespace prjTupperControl.Model.DAO
             else
             {
                 return -1;
+            }
+        }
+
+        private int? VerificaINT(string val)
+        {
+            if (EhNumerico(val))
+            {
+                return Convert.ToInt32(val);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private bool EhNumerico(string control)
+        {
+            if (int.TryParse(control, out int x))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
